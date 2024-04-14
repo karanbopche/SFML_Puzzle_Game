@@ -6,22 +6,63 @@
         {
             "label": "generate debug",
             "type": "shell",
-            "command": "cmake -S . -B build -G 'MinGW Makefiles' -DCMAKE_BUILD_TYPE=debug"
+            "command": "cmake",
+            "args": [
+                "-S",
+                ".",
+                "-B",
+                "build",
+                "-G",
+                "'MinGW Makefiles",
+                "-DCMAKE_BUILD_TYPE=debug"
+            ]
         },
         {
             "label": "generate release",
             "type": "shell",
-            "command": "cmake -S . -B build -G 'MinGW Makefiles' -DCMAKE_BUILD_TYPE=release"
+            "command": "cmake",
+            "args": [
+                "-S",
+                ".",
+                "-B",
+                "release",
+                "-G",
+                "'MinGW Makefiles",
+                "-DCMAKE_BUILD_TYPE=release"
+            ]
         },
         {
-            "label": "build",
+            "label": "build debug",
             "type": "shell",
-            "command": "cmake --build build -j",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build",
+                "-j"
+            ]
+        },
+        {
+            "label": "build release",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "release",
+                "-j"
+            ]
+        },
+        {
+            "label": "test",
+            "type": "shell",
+            "command": "ctest",
+            "options": {
+                "cwd": "build/tests"
+            }
         },
         {
             "label": "run",
             "type": "process",
-            "dependsOn": "build",
+            "dependsOn": "build debug",
             "command": "PuzzleGame.exe",
             "options": {
                 "cwd": "${workspaceFolder}/build/bin"

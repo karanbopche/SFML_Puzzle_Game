@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/build/_deps/sfml-src/include",
-                "${workspaceFolder}/build/_deps/box2d-src/Box2D"
+                "${workspaceFolder}/build/_deps/box2d-src/Box2D",
+                "${workspaceFolder}/build/_deps/googletest-src/googletest/include"
             ],
             "defines": [
                 "_DEBUG",

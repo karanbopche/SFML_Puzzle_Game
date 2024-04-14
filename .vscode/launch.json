@@ -6,12 +6,12 @@
     "configurations": [
         {
             "name": "PuzzleGame Debug",
-            "preLaunchTask": "build",
+            "preLaunchTask": "build debug",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/bin/PuzzleGame.exe",
+            "cwd": "${workspaceFolder}",
             "MIMode": "gdb",
-            "cwd" : "${workspaceFolder}",
         }
     ]
 }
